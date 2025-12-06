@@ -49,6 +49,14 @@ parameter "parameter.database.host" {
     label = "Database Hostname"
 }
 
+parameter "parameter.container.feed" {
+    display_settings = {
+        Octopus.ControlType = "Feed"
+    }
+    help_text = ""
+    label = "Container Feed"
+}
+
 step "flyway-database-migrations" {
     name = "Flyway Database Migrations"
 
@@ -1192,6 +1200,11 @@ step "flyway-database-migrations" {
                 label = "Additional arguments"
                 default_value = ""
             }
+        }
+
+        container {
+            feed = "#{parameter.container.feed}"
+            image = "octopusdeploy/worker-tools:6.5.0-ubuntu.22.04"
         }
 
         packages "Flyway.Package.Value" {
