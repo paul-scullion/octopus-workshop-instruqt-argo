@@ -15,7 +15,7 @@ step "sql-create-database-user-if-not-exists" {
         worker_pool = "hosted-ubuntu"
 
         container {
-            feed = "github-container-registry"
+            feed = "docker-hub"
             image = "octopusdeploy/worker-tools:6.5.0-ubuntu.22.04"
         }
     }
