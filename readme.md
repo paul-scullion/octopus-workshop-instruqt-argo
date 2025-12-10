@@ -2,7 +2,7 @@
 
 This repository contains the example application used throughout the Octopus Deploy workshop.
 
-It includes:
+It includes :
 
 - A **sample database project** for demonstrating packaging and deploying schema changes.
 - A **frontend application** used to show how application components can be deployed and managed with ArgoCD.
